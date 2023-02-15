@@ -32,8 +32,27 @@ const createProduct = async (productInfo) => {
   return product;
 };
 
+const updateProduct = async (infoToUpdate, id) => {
+  const productExists = await productsModel.getProductById(id);
+  if (productExists.length === 0) {
+    const errorObject = { status: 404, message: 'Product not found' };
+    throw errorObject;
+  }
+  const { error } = productSchemma.validate(infoToUpdate);
+  if (error) {
+    const errorObject = {
+      status: error.details[0].type === 'string.min' ? 422 : 400, message: error.message,
+    };
+    throw errorObject;
+  }
+  await productsModel.updateProduct(infoToUpdate.name, id);
+  const [result] = await productsModel.getProductById(id);
+  return result;
+};
+
 module.exports = {
   getAllProducts,
   getProductById,
   createProduct,
+  updateProduct,
 };
