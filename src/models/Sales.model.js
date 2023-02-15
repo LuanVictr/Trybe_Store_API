@@ -14,11 +14,11 @@ const registerSale = async () => {
 };
 
 const getAllSales = async () => {
-  const query = ` SELECT sp.sale_id, s.date, sp.product_id, sp.quantity
+  const query = ` SELECT sp.sale_id as saleId, s.date, sp.product_id as productId, sp.quantity
   FROM StoreManager.sales_products as sp
   INNER JOIN StoreManager.sales as s 
-  ON s.id = sp.sale_id;
-  ORDER BY sp.sale_id ASC, sp.product_id ASC`;
+  ON s.id = sp.sale_id
+  ORDER BY sp.sale_id ASC, sp.product_id ASC;`;
   const [result] = await connection.execute(query);
   return result;
 };
