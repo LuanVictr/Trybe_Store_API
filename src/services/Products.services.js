@@ -11,8 +11,8 @@ const getAllProducts = async () => {
 };
 
 const getProductById = async (id) => {
-  const result = productsModel.getProductById(id);
-  if (!result.length) {
+  const [result] = await productsModel.getProductById(id);
+  if (!result) {
     const errorObject = { status: 404, message: 'Product not found' };
     throw errorObject;
   }
@@ -22,11 +22,12 @@ const getProductById = async (id) => {
 const createProduct = async (productInfo) => {
   const { error } = productSchemma.validate(productInfo);
   if (error) {
-    const errorObject = { status: 400, message: error.message };
+    const errorObject = {
+      status: error.details[0].type === 'string.min' ? 422 : 400, message: error.message,
+    };
     throw errorObject;
   }
   const result = await productsModel.createProduct(productInfo);
-  console.log('o resultado foi', result);
   const product = { id: result, name: productInfo.name };
   return product;
 };

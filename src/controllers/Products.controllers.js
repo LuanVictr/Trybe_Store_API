@@ -23,7 +23,7 @@ const createProduct = async (req, res) => {
   try {
     const productInfo = req.body;
     const result = await productsServices.createProduct(productInfo);
-    res.status(200).send(result);
+    res.status(201).send(result);
   } catch (error) {
     res.status(error.status).json({ message: error.message });
   }

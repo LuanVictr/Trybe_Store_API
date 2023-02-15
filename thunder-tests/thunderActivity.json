@@ -18,11 +18,11 @@
     "colId": "history",
     "containerId": "",
     "name": "localhost:3000/products/2",
-    "url": "localhost:3000/products/2",
+    "url": "localhost:3000/products/999",
     "method": "GET",
     "sortNum": 0,
     "created": "2023-02-14T12:36:21.080Z",
-    "modified": "2023-02-14T12:36:21.080Z",
+    "modified": "2023-02-15T17:44:59.594Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -50,12 +50,69 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2023-02-14T12:40:09.608Z",
-    "modified": "2023-02-14T12:52:15.371Z",
+    "modified": "2023-02-14T13:22:15.504Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"ProdutoX\"\n}",
+      "raw": "{\n  \n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "fa6d5b80-1eb5-41e0-b9de-9916db99d2ce",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/sales",
+    "url": "localhost:3000/sales",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-02-14T19:33:17.439Z",
+    "modified": "2023-02-14T19:54:25.459Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "[\n  {\n    \"quantity\": 1\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 5\n  }\n]",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "de36be91-cfe5-4f57-817f-520e10a18b9d",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/sales",
+    "url": "localhost:3000/sales",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-15T17:31:48.065Z",
+    "modified": "2023-02-15T17:31:48.065Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "[\n  {\n    \"quantity\": 1\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 5\n  }\n]",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "060a62a7-6f21-4485-a0aa-3007acba3e9f",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/sales/2",
+    "url": "localhost:3000/sales/2",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-15T18:01:24.043Z",
+    "modified": "2023-02-15T18:01:24.043Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "[\n  {\n    \"quantity\": 1\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 5\n  }\n]",
       "form": []
     },
     "tests": []
