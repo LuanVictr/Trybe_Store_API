@@ -17,7 +17,7 @@ app.get('/products/:id', productsControllers.getProductById);
 
 app.post('/products', productsControllers.createProduct);
 
-app.post('/sales', salesControllers.createSale);
+/* app.post('/sales', salesControllers.createSale); */
 
 app.get('/sales', salesControllers.getAllSales);
 
